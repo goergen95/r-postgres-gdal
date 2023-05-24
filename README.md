@@ -6,7 +6,7 @@ This repository contains the source code for a contribution to a discussion at [
 
 For vector data, the GDAL [PostgreSQL](https://gdal.org/drivers/vector/pg.html) driver allows to read and write to a database using both `sf` and `terra`.
 
-For raster data, the [GDAL driver](https://gdal.org/drivers/raster/postgisraster.html#raster-postgisraster) states that currently read-only support is implemented but that the `GDALDriver::CreateCopy() operation is available. 
+For raster data, the [GDAL driver](https://gdal.org/drivers/raster/postgisraster.html#raster-postgisraster) states that currently read-only support is implemented but that the `GDALDriver::CreateCopy()` operation is available. 
 Using stars, the error message `Error: driver does not support Create() method.` is thrown, indicating that the path over `CreateCopy()` is not taken and writing a raster to a PostGIS database fails. 
 
 Using terra, the second error message reads: 

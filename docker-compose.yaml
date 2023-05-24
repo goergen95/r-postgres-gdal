@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgis/postgis:15-3.3-alpine
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgis
+      POSTGRES_PASSWORD: postgis
+    ports:
+      - 8888:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      -  ./:/home/postgis
+      
+  rstudio:
+    image: rocker/geospatial
+    container_name: r-studio
+    restart: always
+    environment:
+      - USER=rstudio
+      - PASSWORD=supersecret
+      - ROOT=TRUE
+    volumes:
+      - ./:/home/rstudio/r-postgres-gdal
+    ports:
+      - 8787:8787
+    links: 
+      - postgres

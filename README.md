@@ -29,7 +29,7 @@ git clone https://github.com/goergen95/r-postgres-gdal
 cd r-postgres-gdal
 docker-compose up -d
 docker exec -ti postgres bash /home/postgis/load_raster.sh
-docker exec -it r-studio Rscript /home/rstudio/r-postgres-gdal/postgres_io.R
+docker exec -ti r-studio Rscript /home/rstudio/r-postgres-gdal/postgres_io.R
 ```
 
 or go to `localhost:8787` using `rstudio` as username and `supersecret` as password to run the script interactively in R-Studio.

@@ -9,7 +9,6 @@ services:
     ports:
       - 8888:5432
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
       -  ./:/home/postgis
       
   rstudio:
